@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -8,7 +9,7 @@ const About = () => {
       </h1>
 
       <div className="mb-6 flex gap-3">
-        <img
+        <Image
           src="/welcome.gif"
           alt="Welcome"
           className="w-16 h-16 mx-auto mb-4"
@@ -22,7 +23,7 @@ const About = () => {
       </div>
 
       <div className="mb-6 flex gap-3">
-        <img
+        <Image
           src="/support.gif"
           alt="Support"
           className="w-16 h-16 mx-auto mb-4"
@@ -37,22 +38,22 @@ const About = () => {
       </div>
 
       <div className="mb-6 flex gap-3">
-        <img
+        <Image
           src="/community.gif"
           alt="Community"
           className="w-16 h-16 mx-auto mb-4"
         />
         <p className="text-lg text-white">
-          Whether you're an artist, writer, musician, or any type of creator,
+          Whether you are an artist, writer, musician, or any type of creator,
           our platform is here to help you unlock the potential of your fanbase.
-          It's more than just funding; it's about building a community around
+          It is more than just funding; it is about building a community around
           your work, where your fans can feel directly connected to your
           success.
         </p>
       </div>
 
       <div className="mb-6 flex gap-3">
-        <img src="/join.gif" alt="Join Us" className="w-16 h-16 mx-auto mb-4" />
+        <Image src="/join.gif" alt="Join Us" className="w-16 h-16 mx-auto mb-4" />
         <p className="text-lg text-white">
           Join us today and start bringing your projects to life with the
           support of those who believe in you. Together, we can turn your
