@@ -53,7 +53,7 @@ const Paymentpage = ({ username }) => {
       currency: "INR",
       name: "Get Me a chai", // your business name
       description: "Test Transaction",
-      image: "https://example.com/your_logo",
+      img: "https://example.com/your_logo",
       order_id: orderID, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       callback_url: `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
       prefill: {
@@ -75,7 +75,7 @@ const Paymentpage = ({ username }) => {
   };
 
   const defaultCoverPic = "/cover.jpg";
-  const defaultProfilePic = "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+  const defaultProfilePic = "https://imgs.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
   return (
     <>

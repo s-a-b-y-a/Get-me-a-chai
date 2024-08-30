@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 
 const Login = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   if (session) {
     document.title = "Login - Get me a chai";
-    const router = useRouter();
     router.push("/dashboard");
   }
 

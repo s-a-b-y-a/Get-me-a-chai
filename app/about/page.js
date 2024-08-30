@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const About = () => {
   return (
@@ -9,7 +8,7 @@ const About = () => {
       </h1>
 
       <div className="mb-6 flex gap-3">
-        <Image
+        <img
           src="/welcome.gif"
           alt="Welcome"
           className="w-16 h-16 mx-auto mb-4"
@@ -23,7 +22,7 @@ const About = () => {
       </div>
 
       <div className="mb-6 flex gap-3">
-        <Image
+        <img
           src="/support.gif"
           alt="Support"
           className="w-16 h-16 mx-auto mb-4"
@@ -38,7 +37,7 @@ const About = () => {
       </div>
 
       <div className="mb-6 flex gap-3">
-        <Image
+        <img
           src="/community.gif"
           alt="Community"
           className="w-16 h-16 mx-auto mb-4"
@@ -53,7 +52,7 @@ const About = () => {
       </div>
 
       <div className="mb-6 flex gap-3">
-        <Image src="/join.gif" alt="Join Us" className="w-16 h-16 mx-auto mb-4" />
+        <img src="/join.gif" alt="Join Us" className="w-16 h-16 mx-auto mb-4" />
         <p className="text-lg text-white">
           Join us today and start bringing your projects to life with the
           support of those who believe in you. Together, we can turn your

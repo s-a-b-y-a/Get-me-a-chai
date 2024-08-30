@@ -50,7 +50,7 @@ export default function Home() {
           </div>
           <div className="item space-y-3 flex flex-col items-center justify-center text-center">
             <div className="bg-slate-400 rounded-full p-2 text-black">
-              <img src="/coin.webp" width={90} alt="Coin Image" />
+              <img src="/coin.webp" width={90} alt="Coin img" />
             </div>
             <p className="font-bold">Monetize Your Creativity</p>
             <p>Engage your audience for support</p>
