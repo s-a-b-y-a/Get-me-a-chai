@@ -4,6 +4,21 @@ import GoogleProvider from "next-auth/providers/google";
 import User from "@/app/models/User";
 import connectDB from "@/db/connectDB";
 
+// Ensure the database connection is established when the server starts
+let isConnected = false;
+
+const ensureDBConnection = async () => {
+  if (isConnected) return;
+  try {
+    await connectDB();
+    isConnected = true;
+    console.log('MongoDB connected successfully');
+  } catch (error) {
+    console.error('Error establishing MongoDB connection:', error);
+    process.exit(1); // Exit process with failure
+  }
+};
+
 export const authOptions = {
   providers: [
     GitHubProvider({
@@ -18,19 +33,17 @@ export const authOptions = {
   callbacks: {
     async signIn({ user, account }) {
       try {
-        if (['github', 'google'].includes(account.provider)) {
-          await connectDB();
+        await ensureDBConnection();
 
-          const currentUser = await User.findOne({ email: user.email });
-          if (!currentUser) {
-            const newUser = await User.create({
-              email: user.email,
-              username: user.email.split("@")[0],
-            });
-            console.log('New user created:', newUser);
-          } else {
-            console.log('User already exists:', currentUser);
-          }
+        const currentUser = await User.findOne({ email: user.email });
+        if (!currentUser) {
+          const newUser = await User.create({
+            email: user.email,
+            username: user.email.split("@")[0],
+          });
+          console.log('New user created:', newUser);
+        } else {
+          console.log('User already exists:', currentUser);
         }
         return true;
       } catch (error) {
@@ -41,7 +54,7 @@ export const authOptions = {
 
     async session({ session }) {
       try {
-        await connectDB();
+        await ensureDBConnection();
 
         const dbUser = await User.findOne({ email: session.user.email });
         if (dbUser) {
